@@ -1,0 +1,19 @@
+#!/bin/bash
+
+TIME=$(date +%H)
+FTIME=$(date +%H:%M)
+STATUS=$(gpio read 15)
+
+
+if [ $STATUS -eq 1 ]; then
+    if [ $TIME -gt 17 ]; then
+        gpio write 15 0
+        mpg321 /var/www/data/sfx/greet.mp3
+    elif [ $TIME -lt 4 ]; then
+        gpio write 15 0
+        mpg321 /var/www/data/sfx/greet.mp3
+    fi
+else
+    mpg321 /home/pi/Sounds/greet_alone.mp3
+    espeak "Current time: $FTIME"
+fi

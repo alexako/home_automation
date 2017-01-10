@@ -1,0 +1,47 @@
+body {
+  font-family: calibri, arial, mono;
+  font-size: 2.2em;
+  background-color: #444444;
+}
+
+#current_time {
+  background-color: #0076a3;
+  margin: 10px;
+  padding: 20px;
+}
+
+#current_time h2 {
+  margin-top: 0px;
+  font-weight: 300;
+}
+
+#current_time_now {
+  font-size: 1.7em;
+  font-weight: 100;
+  text-align: center;
+}
+
+#rpi_temp {
+  background-color: #edb131;
+  margin: 20px 10px;
+  padding: 20px;
+}
+
+#current_time, #rpi_temp, p {
+  color:white;
+}
+
+.button {
+  border: 10px solid #444444;
+  font-size: 0.9em;
+  padding: 20px;
+  min-height: 200px;
+}
+
+#button_8 { background-color: #0076a3; }
+
+iframe { 
+  width: 320px;
+  height: 240px;
+  margin: 20px;
+}
