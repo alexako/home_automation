@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 if (isset ( $_GET["pin"] )) {
 	$channels = array(
@@ -19,7 +19,7 @@ if (isset ( $_GET["pin"] )) {
 	//Test if value is a number
 	if ( (is_numeric($channel)) && ($channel == 9)) {
 		
-		system("gpio mode ".$pic." out");
+		system("gpio mode ".$pin." out");
 		//reading pin's status
 		exec ("gpio read ".$pin, $status, $return );
 
@@ -32,8 +32,7 @@ if (isset ( $_GET["pin"] )) {
 		exec ("gpio read ".$pin, $status, $return );
 		//print it to the client on the response
 		echo $status[0];
-	}
-        elseif ($channel == 9) { exec("./reset_relay.ph") }
+	} elseif ($channel == 9) { exec("./reset_relay.ph"); }
 	else { echo ("fail"); }
 } //print fail if cannot use values
 else { echo ("fail"); }
